@@ -14,7 +14,7 @@ resource "aws_iam_user" "digital_users" {
   }
 }
 
-# SPLAT Expression is used to access attributes of multiple resources of same type at a time.
+# SPLAT Expression [*] is used to access attributes of multiple resources of same type at a time.
 # For example if you are creating 3 iam_users and you want to output arn's of 3 users at a time you can use splat expression as below.
 
 output "digital_users_arn" {
