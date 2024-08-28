@@ -1,0 +1,11 @@
+import {
+    to = aws_dynamodb_table.test-table
+    id = "test"
+}
+
+
+# Use the import block to import existing infrastructure resources into Terraform, bringing them under Terraform's management.
+# Once you write import block...
+# Execute the following command to generate the terraform configuration files.
+# Eg: terraform plan -generate-config-out='dynamodb.tf'
+# Once it is generated the config file.. You can run terraform plan and apply to generate state file.
