@@ -1,0 +1,32 @@
+Create a Terraform configuration that supports multiple environments (e.g., dev, staging, and production) using workspaces or a directory structure. 
+Implement environment-specific variables and backend configurations.
+
+
+Solution1: Using workspaces.( useful with small scale projects, Single configuration files, less isolation)
+    Solution 1 disucssed in this repo.
+Solution2: Using different configuration files for different environments ( usefull with large scale and complex projects, more isolation )
+
+Simple... Write the main logic as a module and create seperate folders for each environment and import the module in each environment 
+configuriton files as below
+
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── terraform.tfvars
+│   │   └── backend.tf
+│   ├── staging/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── terraform.tfvars
+│   │   └── backend.tf
+│   └── production/
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── terraform.tfvars
+│       └── backend.tf
+└── modules/
+    └── vpc/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf    

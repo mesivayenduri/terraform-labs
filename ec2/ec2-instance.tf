@@ -4,6 +4,11 @@ terraform {
   #   key = "statefiles/ec2-migrate-state-from-local.tf"
   #   region = "us-east-1"
   # }
+  required_providers {
+    aws = {
+      version = "~> 5.1"
+    }
+  }
 }
 
 provider "aws" {
