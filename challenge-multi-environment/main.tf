@@ -1,6 +1,6 @@
 data "aws_ami" "ami" {
-  most_recent      = true
-  owners           = ["amazon"]
+  most_recent = true
+  owners      = ["amazon"]
 
   filter {
     name   = "name"
@@ -19,11 +19,11 @@ data "aws_ami" "ami" {
 }
 
 resource "aws_instance" "my_first_terraform_ec2" {
-    ami = data.aws_ami.ami.image_id
-    instance_type = var.instancetype
-    tags = local.tags
+  ami           = data.aws_ami.ami.image_id
+  instance_type = var.instancetype
+  tags          = local.tags
 }
 
 output "ami-used" {
-    value = data.aws_ami.ami.image_id
+  value = data.aws_ami.ami.image_id
 }
